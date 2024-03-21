@@ -1,0 +1,28 @@
+{
+  "name": "json-to-formdata",
+  "version": "1.0.0",
+  "description": "Convert json data to formdata instance",
+  "main": "index.js",
+  "types": "types.d.ts",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthiksenniyappan/json-to-formdata.git"
+  },
+  "keywords": [
+    "json",
+    "javascript",
+    "formdata"
+  ],
+  "author": "Karthik Senniyappan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karthiksenniyappan/json-to-formdata/issues"
+  },
+  "homepage": "https://github.com/karthiksenniyappan/json-to-formdata#readme",
+  "devDependencies": {
+    "jest": "29.7.0"
+  }
+}
