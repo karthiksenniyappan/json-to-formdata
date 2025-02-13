@@ -46,6 +46,15 @@ describe("JsonToFormData", () => {
     });
 
     test("should handle files", () => {
+        globalThis.File =
+            globalThis.File ||
+            class FakeFile extends Blob {
+                constructor(chunks, name, options) {
+                    super(chunks, options);
+                    this.name = name;
+                    this.lastModified = options?.lastModified || Date.now();
+                }
+            };
         const file = new (globalThis.File || class FakeFile extends Blob {
             constructor(chunks, name, options) {
                 super(chunks, options);
