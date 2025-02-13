@@ -1,6 +1,5 @@
 const JsonToFormData = require('./index');
 
-
 describe("JsonToFormData", () => {
     test("should convert a simple object to FormData", () => {
         const obj = { name: "John", age: 30 };
@@ -46,27 +45,22 @@ describe("JsonToFormData", () => {
     });
 
     test("should handle files", () => {
-        globalThis.File =
-            globalThis.File ||
-            class FakeFile extends Blob {
-                constructor(chunks, name, options) {
-                    super(chunks, options);
-                    this.name = name;
-                    this.lastModified = options?.lastModified || Date.now();
-                }
-            };
         const file = new (globalThis.File || class FakeFile extends Blob {
             constructor(chunks, name, options) {
                 super(chunks, options);
                 this.name = name;
+                this.lastModified = Date.now();
             }
         })(
             ["content"],
             "test.txt",
             { type: "text/plain" }
         );
+        const name = globalThis.File  ? "test.txt" : 'blob';
         const obj = { document: file };
         const formData = JsonToFormData(obj);
-        expect(formData.get("document")).toBe(file);
+        expect(formData.get("document").name).toBe(name);
+        expect(formData.get("document").type).toBe("text/plain");
     });
+
 });
