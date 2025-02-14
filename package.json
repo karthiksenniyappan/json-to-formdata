@@ -1,6 +1,6 @@
 {
   "name": "json-to-formdata-converter",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Convert json data to formdata instance",
   "main": "index.js",
   "types": "types.d.ts",
@@ -25,8 +25,5 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "json-to-formdata-converter": "^0.0.2"
   }
 }
