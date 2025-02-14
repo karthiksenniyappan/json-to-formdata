@@ -1,6 +1,6 @@
 {
-  "name": "json-to-formdata",
-  "version": "1.0.0",
+  "name": "json-to-formdata-converter",
+  "version": "0.0.1",
   "description": "Convert json data to formdata instance",
   "main": "index.js",
   "types": "types.d.ts",
